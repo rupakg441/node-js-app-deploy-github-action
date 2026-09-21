@@ -12,9 +12,19 @@ const PORT = process.env.PORT || 5000;
   app.use("/api/user", UserRoutes);  
     app.use("/", (req, res)=>{
 
-    return res.status(201).json({
+    return res.status(200).json({
       success: true,
-      message: "User registered successfully"
+      message: "User fetched successfully",
+      data: [
+       {
+        name:"Rupak",
+        email:"rupakg441@gmail.com"
+       },
+        {
+        name:"Ramesh",
+        email:"ramesh@gmail.com"
+       },
+      ]
     });    });  
 
   app.listen(PORT, () => {
